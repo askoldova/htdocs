@@ -1,0 +1,242 @@
+/* start shablon left_content_right ****/
+* {margin:0;padding:0;}
+body {background-color:#fff;font:0.625em/1.3em verdana,arial,helvetica,sans-serif;}
+
+/* global definitions **/
+
+a {color:#FE8D32;text-decoration:none;font-weight:bold;}
+a:visited {color:#FE8D32;}
+a:hover {color:#9D5B19;}
+a:active {color:#FF8300;}
+a img {border:0px;}
+p {margin:15px 10px;text-indent:0em;}
+
+#content a {
+	font:bold 0.92em Tahoma;
+	color:#FE8D32;
+}
+
+.left a, .right a {
+	font-size:1.0em;
+	color:#FE8D32;
+}
+
+.left a:visited, .right a:visited, #content a:visited {color:#FE8D32;}
+.left a:visited, .right a:visited, #content a:visited {color:#FE8D32;}
+.left a:hover, .right a:hover, #content a:hover  {color:#9D5B19;text-decoration:none;}
+
+
+input {border:0px;margin:0px;padding:0px;}
+/* template layout **/
+#gordi {
+  font-size:1.2em;  
+  background-color:transparent;/* col left right */
+  border:#FFEFC5 1px solid;
+  margin:3px auto;
+  position:relative;
+  min-width:1000px;
+  max-width:1000px;
+}
+#main {background-color:#fff;/* content */margin:0 250px 0 240px;}
+.wrap {float:left;width:100%;}
+#content {float:right;position:relative;overflow:hidden;width:100%;}
+
+#content img {margin-right:8px;margin-left:8px;}
+#content p {margin:5px 0 0 0;font: 1.08em/1.18em Arial;text-align:justify;text-indent:10px;}
+#content h1 {color:#FDA100;text-align:center;font:bold 1.17em/2em Tahoma;}
+
+
+.left {position:relative;float:left;margin-left:-230px;left:-1px;width:220px;}
+.right {position:relative;float:right;margin-right:-230px;left:10px;width:230px;}
+
+.readon {display:block;text-align:right;}
+.readon_split {display:block;text-align:right;border-bottom:1px dashed #fda100;margin-bottom:20px;padding-bottom:5px;}
+
+.commentheading {
+	font:bold 1.1em/1.18em Tahoma;
+	color:#9D5B19;
+	display:block;
+	background: url(../images/col_hdr.gif) repeat-x;
+	line-height:18px;
+	text-align:left;
+	margin-top:5px;
+	padding-left:6px;
+	clear:both;
+}
+.comment p {
+	color:#959595;
+}
+
+.left h1,.right h1, .contentheading {
+	font:bold 1.08em Tahoma;
+	color:#9D5B19;
+	display:block;
+	background: url(../images/col_hdr.gif);
+	min-height:22px;
+	text-align:center;
+	margin-top:5px;
+	padding:4px 0 3px 0;
+	border:0px solid red;
+}
+
+.left h1 a, .left h1 a:visited, .left h1 a:hover, .right h1 a, .right h1 a:visited, .right h1 a:hover {
+	color: #9D5B19;
+}
+
+.left h2,.right h2 {
+	font:bold 1.0em/1.18em Tahoma;
+	color:#FE8D32;
+	display:block;
+	border-bottom:1px solid #FE8D32;
+	padding-top:7px;
+	margin-bottom:7px;
+	width:99%;
+}
+.left h3,.right h3 {
+	font:bold 0.92em/1.18em Tahoma;
+	color:#9D5B19;
+	display:block;
+}
+.left p, .right p {margin:5px; text-align: justify;}
+.left hr, .right hr {border:2px solid #FE8D32;}
+.column_text {
+	background-color:#FFF5CF;
+	margin-top:4px;
+	margin-bottom:6px;
+	padding-left:3px;
+	padding-right:3px;
+	padding-bottom:6px;
+}
+
+#content a.category {
+	font-weight: normal;
+	color: #9D5B19;
+	border-bottom: thin dashed darkgray; 
+}
+
+#content .date {
+	color: #9D5B19;
+}
+
+.right .column_text a.dark {
+	font-weight: normal;
+	color: black;
+}
+
+.right .column_text a.dark img {
+	margin-right:6px; margin-left:6px;
+}
+	
+#header {
+  background-color:#fff;
+  position:absolute;
+  top:0;
+  left:0;
+  overflow:hidden;
+  width:100%;
+}
+#header,.header {height:260px;}
+
+#header_left {
+	background: url(../images/header_left.gif) no-repeat;
+	width:374px;
+	height:226px;
+	font:bold 1.0em/1.18em Tahoma;
+	color:#9D5B19;	
+	font:bold 12px/23px Tahoma;
+	text-indent:10px;
+}
+#header_right {	
+	position:absolute;
+	top:0px;
+	left:374px;
+	background:0px 0px url(../images/header_right.jpg) no-repeat;
+	height:226px;
+	width:626px;	
+	color:#9D5B19;
+	font:bold 12px/23px Tahoma;
+}
+#header_right div.hdr_txt{text-align:right;width:600px;padding:2px 0px 0px 12px;}
+#header_right a {color:#AA6C2A;}
+#header_right a:visited {color:#B9762E;}
+#header_right a:hover{color:#f00;}
+a#active_lang {background-color:#CEA061;color:#fff;padding:3px 4px 3px 4px;}
+a#active_lang:visited {color:#fff;}
+a#active_lang:hover {color:#f00;}
+
+#search_bar {
+	text-align:right;
+	background: 0px 0px url(../images/header_sub_bg.jpg) repeat-x;
+	height:25px;
+	padding-right:12px;
+}
+/* hack to correct IE5.5 faulty box model */
+* html #search_bar {
+width:1000px; /* ie5 ***/
+w\idth:980px; /* ie6 ***/
+}
+
+#search_button  {border:0;background-color:transparent;margin-top:-2px;}
+#search_button img{	width:29px;	height:24px;border:0px;}
+#search_input {vertical-align:top;	margin-top:5px; font-size:12px;}
+
+
+.menu_prepare {height:35px;}
+#menu {
+	background-color:#fff;
+	position:absolute;
+	top:260px;
+	left:0;     
+	width:100%;
+	height:25px;
+}
+
+#footer {
+  font-size:11px;
+  background: 0px 0px url(../images/footer_bg.gif) repeat-x;  
+  line-height:30px;
+  position:relative;
+  text-indent:15px;
+  text-align:left;
+  width:100%;
+}
+body {width:expression( documentElement.clientWidth < 980 ? (documentElement.clientWidth == 0 ? (body.clientWidth < 980 ? "980" : "auto") : "980px") : "auto" );}
+#gordi {width:expression( documentElement.clientWidth > 990 ? (documentElement.clientWidth == 0 ? (body.clientWidth >990 ? "990" : "auto") : "990px") : "auto" );}
+*html #main,*html #gordi {height:1%}
+.clear {clear:both;display:block;overflow:hidden;width:100%;height:1px;}
+
+/* end shablon */
+
+/**************************************************
+ * Subfooter of center column. Begin 
+ **************************************************/
+#gordi{
+	min-height:100%;
+	position:relative;
+} 
+* html #gordy{height:100%} /*for IE as IE treats height as min-height anyway*/
+
+#content {
+	padding-bottom:22px;/*make room for footer*/
+}
+	
+#sub_footer {
+	font-size:12px;
+	margin-top:-22px;
+	clear:both;
+	height:20px;
+	color: #000000;
+	text-align:center;
+	border-top: 2px solid #FE8D32;
+}
+#sub_footer a {
+	padding: 0 10px 0 10px;
+}
+
+* html #sub_footer {/*only ie gets this style*/
+	height:22px;/* for ie5 */
+	he\ight:20px;/* for ie6 */
+}
+/**************************************************
+ * Subfooter of center column. End 
+ **************************************************/

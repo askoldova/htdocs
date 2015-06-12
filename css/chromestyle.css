@@ -1,0 +1,83 @@
+.chromestyle{
+	text-align:center;
+	font-weight: bold;
+	margin-left:auto;
+	margin-right:auto;
+	background:0px 0px url(../images/menu_bg_lv_00.gif) repeat-x;
+	width:980px;
+}
+
+.chromestyle:after{ /*Add margin between menu and rest of content in Firefox*/
+content: "."; 
+display: block; 
+height: 0; 
+clear: both; 
+visibility: hidden;
+}
+
+.chromestyle ul{
+width: 100%;
+padding: 4px 0;
+margin: 0;
+text-align: center; /*set value to "left", "center", or "right"*/
+}
+
+.chromestyle ul li{
+display: inline;
+font: bold 12px/15px Arial;
+}
+
+.chromestyle ul li a{
+color: #fff;
+padding: 4px 14px 4px 14px;
+text-decoration: none;
+border-right: 1px solid #fff;
+font: bold 12px/15px Arial;
+}
+.chromestyle ul li a:visited {
+	color: #f1f1f1;
+}
+.chromestyle ul li a:hover, .chromestyle ul li a.selected{ /*script dynamically adds a class of "selected" to the current active menu item*/
+background: url(../images/menu_bg_lv_00_active.gif) center center repeat-x; /*THEME CHANGE HERE*/
+color: #fff;
+}
+
+/* ######### Style for Drop Down Menu ######### */
+
+.dropmenudiv{
+position:absolute;
+top: 0;
+border-bottom-width: 0;
+line-height:23px;
+font:normal 12px/15px Arial;
+z-index:100;
+background-color: #FB9D01;
+width: 200px;  /* Default menu item width */ 
+visibility: hidden;
+filter: progid:DXImageTransform.Microsoft.Shadow(color=#CACACA,direction=135,strength=4); /*Add Shadow in IE. Remove if desired*/
+}
+
+
+.dropmenudiv a{
+font:normal 12px/20px Arial;
+height:23px;
+background:url("../images/submenu_bg.gif") repeat;
+text-indent:5px;
+display: block;
+padding: 0;
+font-weight: bold;
+color: #fff	;
+}
+
+* html .dropmenudiv a{ /*IE only hack*/
+	width: 100%;
+}
+
+.dropmenudiv a:hover{ /*THEME CHANGE HERE*/
+	color:white;
+	background: url("../images/menu_bg_lv_01_active.gif") repeat-x;
+}
+
+.dropmenudiv a:visited{ /*THEME CHANGE HERE*/
+	color:#f0f0f0;
+}
