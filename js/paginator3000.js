@@ -23,8 +23,10 @@
 		baseUrl - the url of the website (String)
 			if baseUrl is 'http://www.yourwebsite.com/pages/' the links on the pages will be:
 			http://www.yourwebsite.com/pages/1, http://www.yourwebsite.com/pages/2,	etc
+		replaceUrl - if empty, or false, should append page_no to baseUrl,
+			if not empty, replace baseUrl replaceUrl value with page_no
 */
-var Paginator = function(paginatorHolderId, pagesTotal, pagesSpan, pageCurrent, baseUrl){
+var Paginator = function(paginatorHolderId, pagesTotal, pagesSpan, pageCurrent, baseUrl, replaceUrl){
 	if(!document.getElementById(paginatorHolderId) || !pagesTotal || !pagesSpan) return false;
 
 	this.inputData = {
@@ -32,7 +34,8 @@ var Paginator = function(paginatorHolderId, pagesTotal, pagesSpan, pageCurrent, 
 		pagesTotal: pagesTotal,
 		pagesSpan: pagesSpan < pagesTotal ? pagesSpan : pagesTotal,
 		pageCurrent: pageCurrent,
-		baseUrl: baseUrl ? baseUrl : '/pages/'
+		baseUrl: baseUrl ? baseUrl : '/pages/',
+		replaceUrl: replaceUrl ? replaceUrl : false
 	};
 
 	this.html = {
@@ -257,7 +260,12 @@ Paginator.prototype.drawPages = function(){
 		if(cellCurrentValue == this.inputData.pageCurrent){
 			html = "<span>" + "<strong>" + cellCurrentValue + "</strong>" + "</span>";
 		} else {
-			html = "<span>" + "<a href='" + this.inputData.baseUrl + cellCurrentValue + "'>" + cellCurrentValue + "</a>" + "</span>";
+			if (this.inputData.replaceUrl) {
+				url = this.inputData.baseUrl.replace(this.inputData.replaceUrl, cellCurrentValue)
+			} else {
+				url = this.inputData.baseUrl + cellCurrentValue
+			}
+			html = "<span>" + "<a href='" + url + "'>" + cellCurrentValue + "</a>" + "</span>";
 		}
 		this.html.tdsPages[i].innerHTML = html;
 	}
